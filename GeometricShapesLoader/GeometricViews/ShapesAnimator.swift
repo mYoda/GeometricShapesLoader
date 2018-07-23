@@ -329,9 +329,6 @@ class GeometricShapesSceneView: UIView, CAAnimationDelegate {
     
     //Bezier curves point generators
     private func getQuadCurvePoints(p1: CGPoint, p2: CGPoint, p3: CGPoint, pointCount: Int) -> [CGPoint] {
-        //0 <= t >= 1
-        // used t = 0.3...0.7 for fast calculation
-        
         //t⋲[0,1]
         //2 points: P = (1-t)P1 + tP2
         //3 points: P = (1−t)2P1 + 2(1−t)tP2 + t2P3
@@ -358,10 +355,7 @@ class GeometricShapesSceneView: UIView, CAAnimationDelegate {
     }
     
     private func getCubeCurvePoints(p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint, pointCount: Int) -> [CGPoint] {
-        //0 <= t >= 1
-        // used t = 0.3...0.7 for fast calculation
-        
-        //t⋲[0,1]
+        //t ⋲ [0,1]
         //2 points: P = (1-t)P1 + tP2
         //3 points: P = (1−t)2P1 + 2(1−t)tP2 + t2P3
         //4 points: P = (1−t)3P1 + 3(1−t)2tP2 +3(1−t)t2P3 + t3P4
